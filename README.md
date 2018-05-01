@@ -22,4 +22,4 @@ Redis will then forward the event to all instances of `DeliveryService` which is
 - Run an instance of `ConfigurationService`.
 - Open the Swagger UI at http://localhost:[port]/swagger/
 - Test updating a configuration by firing a PUT request to api/configuration. You can also use Swagger UI to do that.
-- Check whether the `DeliveryService` receives an event when a configuration is updated.
+- Check whether the `DeliveryService` receives an event when a configuration is updated. If it's working correctly, it should print something like `DeliveryService-a17f67be-b6d4-497a-beb2-d46075d29602: Configuration for key [hello] has been changed to [world] on [1/5/2018 4:36:51 PM]`
