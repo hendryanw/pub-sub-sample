@@ -18,18 +18,12 @@ namespace PubSubSample.Infrastructure.Redis.UnitTests
 
         public RedisMockFixture()
         {
-            _mockSubscriber = new Mock<ISubscriber>();
-            _mockConnectionMultiplexer = new Mock<IConnectionMultiplexer>();
-            _mockConnectionMultiplexer.Setup(x => x.GetSubscriber(It.IsAny<object>()))
-                .Returns(_mockSubscriber.Object);
+            Reset();
         }
 
         public void Reset()
         {
             _mockSubscriber = new Mock<ISubscriber>();
-            _mockSubscriber.Setup(x => x.PublishAsync(It.IsAny<RedisChannel>(), It.IsAny<RedisValue>(), It.IsAny<CommandFlags>()))
-                .Returns(Task.FromResult((long)1));
-
             _mockConnectionMultiplexer = new Mock<IConnectionMultiplexer>();
             _mockConnectionMultiplexer.Setup(x => x.GetSubscriber(It.IsAny<object>()))
                 .Returns(_mockSubscriber.Object);
