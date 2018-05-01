@@ -20,6 +20,6 @@ Redis will then forward the event to all instances of `DeliveryService` which is
 - Run a Redis docker container instance by opening a PowerShell window and run the following command `docker run -p 6379:6379 -i redis`. This will expose the redis endpoint at localhost port 6379. Make sure you update the configuration values if you are running the redis instance somewhere else.
 - Run multiple instances of `DeliveryService`. You can do this by right-clicking the `PubSubSample.DeliveryService` project and click Debug > Start new instance as many times as necessary. If everything works well, you will find a console window output where `DeliveryService` is listening for events.
 - Run an instance of `ConfigurationService`.
-- Open the Swagger UI at http://localhost:59165/swagger/
+- Open the Swagger UI at http://localhost:[port]/swagger/
 - Test updating a configuration by firing a PUT request to api/configuration. You can also use Swagger UI to do that.
 - Check whether the `DeliveryService` receives an event when a configuration is updated.
